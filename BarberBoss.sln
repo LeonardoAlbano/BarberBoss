@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C838BAC4-1284-41D8-9BB2-15843032239C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{36F22CDC-AE86-4EEE-A562-295B0075220D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberBoss.Api", "src\BarberBoss.Api\BarberBoss.Api.csproj", "{548CEC0D-41A7-4DEA-9D0D-F633F56846D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberBoss.Domain", "src\BarberBoss.Domain\BarberBoss.Domain.csproj", "{34748CAC-E312-4A49-A3E7-5A00307591BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberBoss.Communication", "src\BarberBoss.Communication\BarberBoss.Communication.csproj", "{34FA7AA5-F4B7-4319-9E16-154BF0B4552F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberBoss.Exception", "src\BarberBoss.Exception\BarberBoss.Exception.csproj", "{13EBDEA3-0C22-4336-B07F-63917C46D062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberBoss.Application", "src\BarberBoss.Application\BarberBoss.Application.csproj", "{746064CE-5019-40A3-A037-CF8752792ED8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberBoss.Infrastructure", "src\BarberBoss.Infrastructure\BarberBoss.Infrastructure.csproj", "{CE7FE958-6029-456A-B033-2107371108F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{548CEC0D-41A7-4DEA-9D0D-F633F56846D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{548CEC0D-41A7-4DEA-9D0D-F633F56846D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{548CEC0D-41A7-4DEA-9D0D-F633F56846D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{548CEC0D-41A7-4DEA-9D0D-F633F56846D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34748CAC-E312-4A49-A3E7-5A00307591BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34748CAC-E312-4A49-A3E7-5A00307591BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34748CAC-E312-4A49-A3E7-5A00307591BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34748CAC-E312-4A49-A3E7-5A00307591BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34FA7AA5-F4B7-4319-9E16-154BF0B4552F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34FA7AA5-F4B7-4319-9E16-154BF0B4552F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34FA7AA5-F4B7-4319-9E16-154BF0B4552F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34FA7AA5-F4B7-4319-9E16-154BF0B4552F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13EBDEA3-0C22-4336-B07F-63917C46D062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13EBDEA3-0C22-4336-B07F-63917C46D062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13EBDEA3-0C22-4336-B07F-63917C46D062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13EBDEA3-0C22-4336-B07F-63917C46D062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{746064CE-5019-40A3-A037-CF8752792ED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{746064CE-5019-40A3-A037-CF8752792ED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{746064CE-5019-40A3-A037-CF8752792ED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{746064CE-5019-40A3-A037-CF8752792ED8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE7FE958-6029-456A-B033-2107371108F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE7FE958-6029-456A-B033-2107371108F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE7FE958-6029-456A-B033-2107371108F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE7FE958-6029-456A-B033-2107371108F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{548CEC0D-41A7-4DEA-9D0D-F633F56846D7} = {C838BAC4-1284-41D8-9BB2-15843032239C}
+		{34748CAC-E312-4A49-A3E7-5A00307591BE} = {C838BAC4-1284-41D8-9BB2-15843032239C}
+		{34FA7AA5-F4B7-4319-9E16-154BF0B4552F} = {C838BAC4-1284-41D8-9BB2-15843032239C}
+		{13EBDEA3-0C22-4336-B07F-63917C46D062} = {C838BAC4-1284-41D8-9BB2-15843032239C}
+		{746064CE-5019-40A3-A037-CF8752792ED8} = {C838BAC4-1284-41D8-9BB2-15843032239C}
+		{CE7FE958-6029-456A-B033-2107371108F4} = {C838BAC4-1284-41D8-9BB2-15843032239C}
+	EndGlobalSection
+EndGlobal
