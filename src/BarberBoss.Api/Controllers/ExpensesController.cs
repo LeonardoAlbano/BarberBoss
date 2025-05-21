@@ -1,4 +1,6 @@
-﻿using CashFlow.Communication.Requests;
+﻿using BarberBoss.Application.UseCases.Expenses.Register;
+using BarberBoss.Communication.Requests;
+using BarberBoss.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BarberBoss.Api.Controllers
@@ -9,8 +11,27 @@ namespace BarberBoss.Api.Controllers
     {
         [HttpPost]
         public IActionResult Register([FromBody] RequestRegisterExpenseJson request)
-         {
-            return Created();
+        {
+            try
+            {
+                var useCase = new RegisterExpenseUseCase();
+
+                var response = useCase.Execute(request);
+
+                return Created(string.Empty, response);
+            }
+            catch (ArgumentException ex)
+            {
+                var errorReponse = new ResponseErrorJson(ex.Message);
+
+                return BadRequest(errorReponse);
+            }
+            catch
+            {
+                var errorReponse = new ResponseErrorJson("unknown error");
+
+                return StatusCode(StatusCodes.Status500InternalServerError, errorReponse);
+            }
         }
     }
 }

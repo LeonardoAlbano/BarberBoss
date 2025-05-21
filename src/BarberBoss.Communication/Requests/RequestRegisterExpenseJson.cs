@@ -1,6 +1,6 @@
-﻿using CashFlow.Communication.Enums;
+﻿using BarberBoss.Communication.Enums;
 
-namespace CashFlow.Communication.Requests;
+namespace BarberBoss.Communication.Requests;
 public class RequestRegisterExpenseJson
 {
     public string Title { get; set; } = string.Empty;

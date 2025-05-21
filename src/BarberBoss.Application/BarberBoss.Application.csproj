@@ -7,6 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NovaPasta\**" />
+    <EmbeddedResource Remove="NovaPasta\**" />
+    <None Remove="NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BarberBoss.Communication\BarberBoss.Communication.csproj" />
     <ProjectReference Include="..\BarberBoss.Domain\BarberBoss.Domain.csproj" />
     <ProjectReference Include="..\BarberBoss.Exception\BarberBoss.Exception.csproj" />
