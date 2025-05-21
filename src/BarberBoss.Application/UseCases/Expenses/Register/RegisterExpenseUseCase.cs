@@ -1,13 +1,18 @@
-﻿using BarberBoss.Communication.Enums;
-using BarberBoss.Communication.Requests;
+﻿using BarberBoss.Communication.Requests;
 using BarberBoss.Communication.Responses;
 using BarberBoss.Domain.Entities;
 using BarberBoss.Exception.ExceptionsBase;
-using BarberBoss.Infrastructure.DataAccess;
 
 namespace BarberBoss.Application.UseCases.Expenses.Register;
-public class RegisterExpenseUseCase
+public class RegisterExpenseUseCase : IRegisterExpenseUseCase
 {
+    private readonly IExpensesRepository _repository;
+
+    public RegisterExpenseUseCase(IExpensesRepository repository)
+    {
+        _repository = repository;
+    }
+
     public ResponseRegisteredExpenseJson Execute(RequestRegisterExpenseJson request)
     {
         Validate(request);
@@ -21,6 +26,7 @@ public class RegisterExpenseUseCase
             PaymentType = (Domain.Enums.PaymentType)request.PaymentType,
         };
 
+        _repository.Add(entity);
 
         return new ResponseRegisteredExpenseJson();
     }
