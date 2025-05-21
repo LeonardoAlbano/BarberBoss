@@ -1,4 +1,5 @@
 ﻿using BarberBoss.Communication.Responses;
+using BarberBoss.Exception;
 using BarberBoss.Exception.ExceptionsBase;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -41,7 +42,7 @@ namespace BarberBoss.Api.Filters
 
         private void ThrowUnkowError(ExceptionContext context)
         {
-            var errorResponse = new ResponseErrorJson("Unknown error");
+            var errorResponse = new ResponseErrorJson(ResourceErrorMessages.UNKNOWN_ERROR);
 
             context.HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
             context.Result = new ObjectResult(errorResponse);
