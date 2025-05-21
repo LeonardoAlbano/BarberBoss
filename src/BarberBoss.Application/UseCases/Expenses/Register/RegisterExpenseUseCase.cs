@@ -1,6 +1,7 @@
 ﻿using BarberBoss.Communication.Enums;
 using BarberBoss.Communication.Requests;
 using BarberBoss.Communication.Responses;
+using BarberBoss.Exception.ExceptionsBase;
 
 namespace BarberBoss.Application.UseCases.Expenses.Register;
 public class RegisterExpenseUseCase
@@ -22,7 +23,7 @@ public class RegisterExpenseUseCase
         {
             var errorMessages = result.Errors.Select(f => f.ErrorMessage).ToList();
 
-            throw new ArgumentException();
+            throw new ErrorOnValidationException(errorMessages);
         }
     }
 }
