@@ -1,6 +1,8 @@
 ﻿using BarberBoss.Application.UseCases.Expenses.Register;
 using BarberBoss.Communication.Requests;
+using BarberBoss.Exception;
 using CommonTestUtilities.Requests;
+using FluentAssertions;
 
 namespace Validators.Tests.Expenses.Register
 {
@@ -17,7 +19,23 @@ namespace Validators.Tests.Expenses.Register
             var result = validator.Validate(request);
 
             //Assert
-            Assert.True(result.IsValid);
+            result.IsValid.Should().BeTrue();
+        }
+
+        [Fact]
+        public void Error_Title_Empty()
+        {
+            //Arrange
+            var validator = new RegisterExpenseValidator();
+            var request = RequestRegisterExpenseJsonBuilder.Build();
+            request.Title = string.Empty;
+
+            //Act
+            var result = validator.Validate(request);
+
+            //Assert
+            result.IsValid.Should().BeFalse();
+            result.Errors.Should().ContainSingle().And.Contain(e => e.ErrorMessage.Equals(ResourceErrorMessages.TITLE_REQUIRED));
         }
     }
 }
