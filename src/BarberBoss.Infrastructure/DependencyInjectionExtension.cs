@@ -1,5 +1,4 @@
-﻿using BarberBoss.Domain.Entities;
-using BarberBoss.Domain.Repositories;
+﻿using BarberBoss.Domain.Repositories;
 using BarberBoss.Domain.Repositories.Expenses;
 using BarberBoss.Infrastructure.DataAccess;
 using BarberBoss.Infrastructure.DataAccess.Repositories;
@@ -22,13 +21,14 @@ namespace BarberBoss.Infrastructure
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IExpensesReadOnlyRepository, ExpensesRepository>();
             services.AddScoped<IExpensesWriteOnlyRepository, ExpensesRepository>();
+            services.AddScoped<IExpensesUpdateOnlyRepository, ExpensesRepository>();
         }
 
         private static void AddDbContext(IServiceCollection services, IConfiguration configuration)
         {
             var connectionString = configuration.GetConnectionString("Connection");
 
-            var version = new Version(8, 0, 35);
+            var version = new Version(8, 0, 42);
             var serverVersion = new MySqlServerVersion(version);
 
             services.AddDbContext<BarberBossDbContext>(config => config.UseMySql(connectionString, serverVersion));
