@@ -3,6 +3,7 @@ using BarberBoss.Application.UseCases.Expenses.Delete;
 using BarberBoss.Application.UseCases.Expenses.GetAll;
 using BarberBoss.Application.UseCases.Expenses.GetById;
 using BarberBoss.Application.UseCases.Expenses.Register;
+using BarberBoss.Application.UseCases.Expenses.Reports.Excel;
 using BarberBoss.Application.UseCases.Expenses.Update;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -28,6 +29,7 @@ namespace BarberBoss.Application
             services.AddScoped<IGetExpenseByIdUseCase, GetExpenseByIdUseCase>();
             services.AddScoped<IDeleteExpenseUseCase, DeleteExpenseUseCase>();
             services.AddScoped<IUpdateExpenseUseCase, UpdateExpenseUseCase>();
+            services.AddScoped<IGenerateExpensesReportExcelUseCase, GenerateExpensesReportExcelUseCase>();
         }
     }
 }
