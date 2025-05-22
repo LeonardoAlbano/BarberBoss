@@ -1,5 +1,6 @@
 ﻿using BarberBoss.Domain.Entities;
 using BarberBoss.Domain.Repositories;
+using BarberBoss.Domain.Repositories.Expenses;
 using BarberBoss.Infrastructure.DataAccess;
 using BarberBoss.Infrastructure.DataAccess.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +20,8 @@ namespace BarberBoss.Infrastructure
         private static void AddRepositories(IServiceCollection services)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IExpensesRepository, ExpensesRepository>();
+            services.AddScoped<IExpensesReadOnlyRepository, ExpensesRepository>();
+            services.AddScoped<IExpensesWriteOnlyRepository, ExpensesRepository>();
         }
 
         private static void AddDbContext(IServiceCollection services, IConfiguration configuration)

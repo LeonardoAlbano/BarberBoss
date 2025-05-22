@@ -1,0 +1,33 @@
+﻿using AutoMapper;
+using BarberBoss.Communication.Responses;
+using BarberBoss.Domain.Entities;
+using BarberBoss.Domain.Repositories.Expenses;
+using BarberBoss.Exception;
+using BarberBoss.Exception.ExceptionsBase;
+
+namespace BarberBoss.Application.UseCases.Expenses.GetById
+{
+    public class GetExpenseByIdUseCase : IGetExpenseByIdUseCase
+    {
+        private readonly IExpensesReadOnlyRepository _repository;
+        private readonly IMapper _mapper;
+
+        public GetExpenseByIdUseCase(IExpensesReadOnlyRepository repository, IMapper mapper)
+        {
+            _repository = repository;
+            _mapper = mapper;
+        }
+
+        public async Task<ResponseExpenseJson> Execute(long id)
+        {
+            var result = await _repository.GetById(id);
+
+            if (result is null)
+            {
+                throw new NotFoundException(ResourceErrorMessages.EXPENSE_NOT_FOUND);
+            }
+
+            return _mapper.Map<ResponseExpenseJson>(result);
+        }
+    }
+}

@@ -21,6 +21,8 @@ namespace BarberBoss.Application.AutoMapper
         private void EntityToResponse()
         {
             CreateMap<Expense, ResponseRegisteredExpenseJson>();
+            CreateMap<Expense, ResponseShortExpenseJson>();
+            CreateMap<Expense, ResponseExpenseJson>();
         }
     }
 }
