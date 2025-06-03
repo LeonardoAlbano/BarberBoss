@@ -6,6 +6,8 @@ using BarberBoss.Application.UseCases.Expenses.Register;
 using BarberBoss.Application.UseCases.Expenses.Reports.Excel;
 using BarberBoss.Application.UseCases.Expenses.Reports.Pdf;
 using BarberBoss.Application.UseCases.Expenses.Update;
+using BarberBoss.Application.UseCases.Users.Register;
+using CashFlow.Application.UseCases.Users.Register;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BarberBoss.Application
@@ -32,6 +34,7 @@ namespace BarberBoss.Application
             services.AddScoped<IUpdateExpenseUseCase, UpdateExpenseUseCase>();
             services.AddScoped<IGenerateExpensesReportExcelUseCase, GenerateExpensesReportExcelUseCase>();
             services.AddScoped<IGenerateExpensesReportPdfUseCase, GenerateExpensesReportPdfUseCase>();
+            services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
         }
     }
  }
