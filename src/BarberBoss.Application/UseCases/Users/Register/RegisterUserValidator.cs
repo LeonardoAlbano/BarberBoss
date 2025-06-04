@@ -1,4 +1,5 @@
-﻿using BarberBoss.Communication.Requests;
+﻿using BarberBoss.Application.UseCases.Users.Register;
+using BarberBoss.Communication.Requests;
 using BarberBoss.Exception;
 using FluentValidation;
 
